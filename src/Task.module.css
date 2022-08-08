@@ -1,0 +1,101 @@
+.task {
+  display: flex;
+  align-items: start;
+  padding: 1rem;
+  gap: 0.75rem;
+  border-radius: 0.5rem;
+  background: var(--gray-500);
+
+  box-shadow: inset 0 0 0 1px var(--gray-400);
+}
+.task.task-checked {
+  box-shadow: inset 0 0 0 1px var(--gray-500);
+}
+
+.task div {
+  flex: 1;
+}
+.task div p {
+  display: inline-block;
+  font-size: 0.875rem;
+}
+.task.task-checked p {
+  color: var(--gray-300);
+  text-decoration-line: line-through;
+}
+.task:not(.task-checked) p {
+  color: var(--gray-100);
+}
+
+.task > button {
+  border: none;
+  font-size: 0;
+}
+.task > button:first-of-type {
+  background: transparent;
+  color: var(--gray-300);
+
+  transition-duration: 0.2s;
+  transition-property: background-color, color;
+  transition-timing-function: ease-out;
+}
+.task > button:first-of-type svg {
+  width: auto;
+  height: 1.5rem;
+}
+
+.task.task-checked > button:first-of-type svg circle {
+  fill: var(--brand-purple-dark);
+  stroke: var(--brand-purple-dark);
+
+  transition-duration: 0.2s;
+  transition-property: fill, stroke;
+  transition-timing-function: ease-out;
+}
+.task.task-checked > button:first-of-type:hover svg circle {
+  fill: var(--brand-purple);
+  stroke: var(--brand-purple);
+}
+.task.task-checked > button:first-of-type svg polyline {
+  fill: none;
+  stroke: var(--gray-100);
+  stroke-width: 1.5rem;
+}
+
+.task:not(.task-checked) > button:first-of-type svg circle {
+  stroke: var(--brand-blue);
+  stroke-width: 1.5rem;
+
+  transition-duration: 0.2s;
+  transition-property: fill, fill-opacity, stroke;
+  transition-timing-function: ease-out;
+}
+.task:not(.task-checked) > button:first-of-type:hover svg circle{
+  fill: var(--brand-blue-dark);
+  fill-opacity: 0.20;
+  stroke: var(--brand-blue-dark);
+}
+
+.task > button:last-of-type {
+  display: block;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+
+  background: transparent;
+  border-radius: 0.25rem;
+  color: var(--gray-300);
+  cursor: pointer;
+
+  transition-duration: 0.2s;
+  transition-property: background-color, color;
+  transition-timing-function: ease-out; 
+}
+.task > button:last-of-type:hover {
+  background: var(--gray-400);
+  color: var(--danger);
+}
+.task > button:last-of-type svg {
+  width: auto;
+  height: 1rem;
+}
