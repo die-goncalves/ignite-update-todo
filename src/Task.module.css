@@ -34,6 +34,7 @@
 .task > button:first-of-type {
   background: transparent;
   color: var(--gray-300);
+  cursor: pointer;
 
   transition-duration: 0.2s;
   transition-property: background-color, color;
